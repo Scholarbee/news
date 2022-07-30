@@ -32,7 +32,7 @@ exports.exploreCategories = async(req, res) => {
   try {
     const limitNumber = 20;
     const categories = await Category.find({}).limit(limitNumber);
-    res.render('categories', { title: 'Cooking Blog - Categoreis', categories } );
+    res.render('categories', { title: 'Blog - Categoreis', categories } );
   } catch (error) {
     console.log(error)
     // res.satus(500).send({message: error.message || "Error Occured" });
@@ -96,7 +96,7 @@ exports.exploreLatest = async(req, res) => {
   try {
     const limitNumber = 20;
     const news = await News.find({}).sort({ _id: -1 }).limit(limitNumber);
-    res.render('explore-latest', { title: 'Cooking Blog - Explore Latest', news } );
+    res.render('explore-latest', { title: 'Blog - Explore Latest', news } );
   } catch (error) {
     console.log(error)
     // res.satus(500).send({message: error.message || "Error Occured" });
